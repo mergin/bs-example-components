@@ -1,0 +1,21 @@
+{
+    "scssFormatter.tabWidth": 4,
+    "html.format.wrapAttributes": "force-aligned",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#8984ff",
+        "activityBar.activeBorder": "#ffc2bf",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#ffc2bf",
+        "activityBarBadge.foreground": "#15202b",
+        "titleBar.activeBackground": "#5851ff",
+        "titleBar.inactiveBackground": "#5851ff99",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "statusBar.background": "#5851ff",
+        "statusBarItem.hoverBackground": "#8984ff",
+        "statusBar.foreground": "#e7e7e7"
+    },
+    "editor.formatOnSave": true,
+    "peacock.color": "#5851ff"
+}
