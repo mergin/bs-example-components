@@ -17,6 +17,8 @@ export namespace Components {
     'imageurl': string;
     'subtitle': string;
   }
+  interface BsTabContent {}
+  interface BsTabs {}
 }
 
 declare global {
@@ -27,8 +29,22 @@ declare global {
     prototype: HTMLBsCardRectangleElement;
     new (): HTMLBsCardRectangleElement;
   };
+
+  interface HTMLBsTabContentElement extends Components.BsTabContent, HTMLStencilElement {}
+  var HTMLBsTabContentElement: {
+    prototype: HTMLBsTabContentElement;
+    new (): HTMLBsTabContentElement;
+  };
+
+  interface HTMLBsTabsElement extends Components.BsTabs, HTMLStencilElement {}
+  var HTMLBsTabsElement: {
+    prototype: HTMLBsTabsElement;
+    new (): HTMLBsTabsElement;
+  };
   interface HTMLElementTagNameMap {
     'bs-card-rectangle': HTMLBsCardRectangleElement;
+    'bs-tab-content': HTMLBsTabContentElement;
+    'bs-tabs': HTMLBsTabsElement;
   }
 }
 
@@ -40,9 +56,13 @@ declare namespace LocalJSX {
     'imageurl'?: string;
     'subtitle'?: string;
   }
+  interface BsTabContent {}
+  interface BsTabs {}
 
   interface IntrinsicElements {
     'bs-card-rectangle': BsCardRectangle;
+    'bs-tab-content': BsTabContent;
+    'bs-tabs': BsTabs;
   }
 }
 
@@ -53,6 +73,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'bs-card-rectangle': LocalJSX.BsCardRectangle & JSXBase.HTMLAttributes<HTMLBsCardRectangleElement>;
+      'bs-tab-content': LocalJSX.BsTabContent & JSXBase.HTMLAttributes<HTMLBsTabContentElement>;
+      'bs-tabs': LocalJSX.BsTabs & JSXBase.HTMLAttributes<HTMLBsTabsElement>;
     }
   }
 }
