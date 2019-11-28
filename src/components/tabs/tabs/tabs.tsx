@@ -1,4 +1,6 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, State } from '@stencil/core';
+
+type TabNumber = 1 | 2 | 3;
 
 @Component({
     tag: 'bs-tabs',
@@ -7,19 +9,25 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class Tabs {
 
+    @State() private selectedTab: TabNumber = 1;
+
     render() {
         return (
             <Host>
-                <h2>Tab 1</h2>
-                <slot name="tab-1"></slot>
-
-                <h2>Tab 2</h2>
-                <slot name="tab-2"></slot>
-
-                <h2>Tab 1</h2>
-                <slot name="tab-3"></slot>
+                <button onClick={this.onTabSelect.bind(this, 1)}>Tab 1</button>
+                <button onClick={this.onTabSelect.bind(this, 2)}>Tab 2</button>
+                <button onClick={this.onTabSelect.bind(this, 3)}>Tab 1</button>
+                {
+                    this.selectedTab === 1 ? <slot name="tab-1"></slot> :
+                        this.selectedTab === 2 ? <slot name="tab-2"></slot> :
+                            this.selectedTab === 3 ? <slot name="tab-3"></slot> : null
+                }
             </Host>
         );
+    }
+
+    private onTabSelect(tabNumber: TabNumber): void {
+        this.selectedTab = tabNumber;
     }
 
 }
